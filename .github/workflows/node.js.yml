@@ -30,7 +30,7 @@ jobs:
 
       # Step 3: Setup SonarQube Scanner
       - name: Set up SonarQube Scanner
-        uses: SonarSource/sonarcloud-action@v2
+        uses: SonarSource/sonarcloud-action@v1
         with:
           sonar-token: ${{ secrets.SONARQUBE_TOKEN }}
 
