@@ -22,8 +22,10 @@ jobs:
       - name: Run SonarQube Scan
         uses: sonarsource/sonarqube-scan-action@master
         env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}  # Your SonarQube token
-          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}  # SonarQube host URL
+          # SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}  # Your SonarQube token
+          # SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}  # SonarQube host URL
+          SONAR_TOKEN: sqp_be59d78473eaa7bae51b017c883217b18ed333bc   # Your SonarQube token
+          SONAR_HOST_URL: http://20.77.25.135:9000/   # SonarQube host URL          
  
       # Step 2: Log in to Docker Hub
       - name: Log in to Docker Hub
