@@ -38,4 +38,10 @@ jobs:
         if: failure()
         run: cat /home/runner/.npm/_logs/*.log
 
+      - name: Show Docker credentials (for debugging)
+        run: |
+          echo "Docker Username: ${{ secrets.DOCKER_USERNAME }}"
+
+        
+
           
