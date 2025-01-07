@@ -18,7 +18,7 @@ jobs:
         with:
           fetch-depth: 0  # This ensures the full history is available for SonarQube analysis
 
-      # Step 2: Setup SonarQube Scan Action
+      # Step 2: Setup SonarQube Scan 
       - name: Run SonarQube Scan
         uses: sonarsource/sonarqube-scan-action@master
         env:
