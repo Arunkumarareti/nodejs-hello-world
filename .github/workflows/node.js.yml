@@ -18,7 +18,7 @@ jobs:
 
       - name: Show Docker credentials (for debugging)
         run: |
-          echo "Docker Username: ${{ secrets.DOCKER_USERNAME }}"      
+          echo "Docker Username: ${{ secrets.DOCKER_USERNAME }}"
 
       # Step 2: Log in to Docker Hub
       - name: Log in to Docker Hub
@@ -31,19 +31,13 @@ jobs:
       - name: Build the Docker image
         run: |
           docker build . --file Dockerfile --tag ${{ secrets.DOCKER_USERNAME }}/nodejs-hello-world:$(date +%s)
+      
+      # Debugging: Verify if the image exists locally
+      - name: List Docker images
+        run: |
+          docker images
 
       # Step 4: Push Docker Image to Docker Hub
       - name: Push Docker Image
         run: |
           docker push ${{ secrets.DOCKER_USERNAME }}/nodejs-hello-world:$(date +%s)
-
-      # step5: debug 
-      - name: Display npm debug logs
-        if: failure()
-        run: cat /home/runner/.npm/_logs/*.log
-
-
-
-        
-
-          
