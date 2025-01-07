@@ -72,3 +72,9 @@ jobs:
       # Step 5: Build the application
       - name: Build Application
         run: npm run build
+
+      # step6: debug 
+      - name: Display npm debug logs
+        if: failure()
+        run: cat /home/runner/.npm/_logs/*.log
+
