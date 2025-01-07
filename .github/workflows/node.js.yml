@@ -30,7 +30,7 @@ jobs:
       # Step 3: Build Docker Image with a timestamp tag
       - name: Build the Docker image
         run: |
-          docker build . --file Dockerfile --tag ${{ secrets.DOCKER_USERNAME }}/nodejs-hello-world:$(date +%s)
+          docker build . --file Dockerfile --tag ${{ secrets.DOCKER_USERNAME }}/nodejs-hello-world:$(date)
       
       # Debugging: Verify if the image exists locally
       - name: List Docker images
