@@ -32,3 +32,10 @@ jobs:
       - name: Push Docker Image
         run: |
           docker push ${{ secrets.DOCKER_USERNAME }}/nodejs-hello-world:$(date +%s)
+
+      # step5: debug 
+      - name: Display npm debug logs
+        if: failure()
+        run: cat /home/runner/.npm/_logs/*.log
+
+          
